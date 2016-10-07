@@ -38,7 +38,20 @@ public class NumberDisplay
      * String. If the value is less than ten, it will be padded with a leading
      * zero).
      */
-    public String getDisplayValue()
+    public String getHourDisplayValue()
+    {
+        if(value < 10 && value > 0) {
+            return "0" + value;
+        }        
+        else if(value == 13 || value == 0) {
+            return "" + value + 1;
+        }
+       else {
+            return "" + value;
+        }
+    }
+    
+    public String getMinuteDisplayValue()
     {
         if(value < 10) {
             return "0" + value;
@@ -46,7 +59,7 @@ public class NumberDisplay
         else {
             return "" + value;
         }
-    }
+   }  
 
     /**
      * Set the value of the display to the new specified value. If the new
