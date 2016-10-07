@@ -34,11 +34,27 @@ public class NumberDisplay
     }
 
     /**
-     * Return the display value (that is, the current value as a two-digit
-     * String. If the value is less than ten, it will be padded with a leading
-     * zero).
+     *This method will regulate the number of hours so that any number over 12 is formated for a 12 hour clock
+     *rather than a 24 hour cloc
      */
-    public String getDisplayValue()
+    public String getHourDisplayValue()
+    {
+        if(value < 10) {
+            return "0" + value;
+        }
+        else if (value > 12) {
+            value = value - 12;
+            return "" + value;
+        }
+        else {
+            return "" + value;
+        }
+    }
+    
+    /**
+     *This method performs the same function as the original getDisplayValue() but under a different name for
+     *foir added clarity
+     */public String getMinuteDisplayValue()
     {
         if(value < 10) {
             return "0" + value;
