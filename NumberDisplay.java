@@ -33,10 +33,9 @@ public class NumberDisplay
         return value;
     }
 
+    
     /**
-     * Return the display value (that is, the current value as a two-digit
-     * String. If the value is less than ten, it will be padded with a leading
-     * zero).
+     *Determines whether the value will be equivalent to a zero, and if yes, then it adds 1 to the value.
      */
     public String getHourDisplayValue()
     {
@@ -51,6 +50,11 @@ public class NumberDisplay
         }
     }
     
+    /**
+     * Return the display value (that is, the current value as a two-digit
+     * String. If the value is less than ten, it will be padded with a leading
+     * zero).
+     */
     public String getMinuteDisplayValue()
     {
         if(value < 10) {
@@ -63,7 +67,7 @@ public class NumberDisplay
 
     /**
      * Set the value of the display to the new specified value. If the new
-     * value is less than zero or over the limit, do nothing.
+     * value is less than zero or over the limit, do nothing. I'm also realizing this is probably redundant
      */
     public void setValue(int replacementValue)
     {
@@ -81,6 +85,10 @@ public class NumberDisplay
         value = (value + 1) % limit;
     }
     
+    /**
+     *This method performs a very similar action to the original Increment() but instead, it at the ends adds
+     *a value of 1 so that when it rolls over from 12 to 1 it won't display 0.
+     */
     public void hourIncrement()
     {
         value = ((value + 1) % limit) + 1;

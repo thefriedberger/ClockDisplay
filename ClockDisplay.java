@@ -49,7 +49,7 @@ public class ClockDisplay
     {
         minutes.minuteIncrement();
         if(minutes.getValue() == 0) {  // it just rolled over!
-            hours.hourIncrement();
+            hours.hourIncrement(); //I added a method for incrementing hours and minutes individually
         }
         updateDisplay();
     }
